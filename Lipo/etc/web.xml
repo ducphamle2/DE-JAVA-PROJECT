@@ -1,0 +1,16 @@
+<web-app 
+  xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xls:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+  version="2.4"
+>
+  <servlet>
+    <servlet-name>Liquor</servlet-name>
+    <servlet-class>vn.de.lipo.webapp.controller.LiquorSelectServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>Liquor</servlet-name>
+  	<url-pattern>/SelectLiqour.do</url-pattern>
+  </servlet-mapping>
+</web-app>
