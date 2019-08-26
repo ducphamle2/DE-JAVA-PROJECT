@@ -2,8 +2,14 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="lib/jsp.jar"/>
-	<classpathentry kind="lib" path="lib/jstl.jar"/>
-	<classpathentry kind="lib" path="lib/servlet-api-2.5.jar"/>
+	<classpathentry excluding="src/" kind="src" path=""/>
+	<classpathentry exported="true" kind="lib" path="lib/jsp.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jstl.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/servlet-api-2.5.jar" sourcepath="C:/Users/Duc Pham Le/Desktop/tomcat-8.5-doc.zip">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/Duc%20Pham%20Le/Desktop/tomcat-8.5-doc.zip!/tomcat-8.5-doc/servletapi"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Duc Pham Le/Downloads/postgresql-42.2.6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -5,12 +5,31 @@
   version="2.4"
 >
   <servlet>
-    <servlet-name>Liquor</servlet-name>
-    <servlet-class>vn.de.lipo.webapp.controller.LiquorSelectServlet</servlet-class>
+    <servlet-name>LiquorRegister</servlet-name>
+    <servlet-class>vn.de.lipo.webapp.controller.RegisterServlet</servlet-class>
   </servlet>
+
+  <context-param>
+    <param-name>databaseURL</param-name>
+    <param-value>jdbc:postgresql://localhost:5432/lipodb</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>username</param-name>
+    <param-value>ducpham</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>password</param-name>
+    <param-value>123456</param-value>
+  </context-param>
   
   <servlet-mapping>
-  	<servlet-name>Liquor</servlet-name>
-  	<url-pattern>/SelectLiqour.do</url-pattern>
+  	<servlet-name>LiquorRegister</servlet-name>
+  	<url-pattern>/Register.do</url-pattern>
   </servlet-mapping>
+
+  <listener>
+    <listener-class>vn.de.lipo.webapp.listener.RegisterServletListener</listener-class>
+  </listener>
 </web-app>
