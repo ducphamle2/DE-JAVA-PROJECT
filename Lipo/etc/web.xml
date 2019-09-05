@@ -9,6 +9,11 @@
     <servlet-class>vn.de.lipo.webapp.controller.RegisterServlet</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>CookieTesting</servlet-name>
+    <servlet-class>vn.de.lipo.webapp.controller.CookieTestingServlet</servlet-class>
+  </servlet>
+
   <context-param>
     <param-name>databaseURL</param-name>
     <param-value>jdbc:postgresql://localhost:5432/lipodb</param-value>
@@ -27,6 +32,11 @@
   <servlet-mapping>
   	<servlet-name>LiquorRegister</servlet-name>
   	<url-pattern>/Register.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+  	<servlet-name>CookieTesting</servlet-name>
+  	<url-pattern>/checkCookie.do</url-pattern>
   </servlet-mapping>
 
   <listener>
