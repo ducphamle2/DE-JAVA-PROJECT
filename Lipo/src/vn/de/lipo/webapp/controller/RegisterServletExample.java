@@ -16,8 +16,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import vn.de.lipo.webapp.model.DatabaseModel;
 import vn.de.lipo.webapp.utils.ConnectionUtils;
+import vn.de.lipo.webapp.utils.ConstantNameUtils;
 
-public class RegisterServlet extends HttpServlet {
+public class RegisterServletExample extends HttpServlet {
 	/**
 	 * 
 	 */
@@ -43,6 +44,7 @@ public class RegisterServlet extends HttpServlet {
 			connection = ConnectionUtils.getPostgresConnection(model.getDatabaseURL(), model.getUsername(), model.getPassword());
 			Statement statement = connection.createStatement();
 			System.out.println("Reading records...");
+			/*
 			ResultSet result = statement.executeQuery("SELECT * FROM public.Liquor");
 			while (result.next()) {
 				System.out.printf("liquorId: %s\n", result.getString("liquor_id"));
@@ -52,11 +54,13 @@ public class RegisterServlet extends HttpServlet {
 				out.println("test context attributes set by listener<br>");
 				out.println("liquorID: " + result.getString("liquor_id"));
 			}
-			String email = req.getParameter("email");
-			String password = req.getParameter("password");
+			*/
+			String email = req.getParameter(ConstantNameUtils.EMAIL);
+			String password = req.getParameter(ConstantNameUtils.PASSWORD);
+			String username = req.getParameter(ConstantNameUtils.USERNAME);
 			
-			Cookie emailCookie = new Cookie("email", email); // create cookie to keep storing data after user refreshs or turns off browser
-			Cookie passCookie = new Cookie("password", password);
+			Cookie emailCookie = new Cookie(ConstantNameUtils.EMAIL, email); // create cookie to keep storing data after user refreshs or turns off browser
+			Cookie passCookie = new Cookie(ConstantNameUtils.PASSWORD, password);
 			emailCookie.setMaxAge(20*60); // the time in sec to keep user data
 			passCookie.setMaxAge(20*60);
 			
@@ -78,6 +82,10 @@ public class RegisterServlet extends HttpServlet {
 				statement.executeUpdate(sql);
 			}
 			*/
+			
+			// set attribute for JSP
+			req.setAttribute("email", email);
+			req.setAttribute("password", password);
 			
 			RequestDispatcher view = req.getRequestDispatcher("cookie.jsp");
 			view.forward(req, res);

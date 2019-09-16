@@ -5,13 +5,8 @@
   version="2.4"
 >
   <servlet>
-    <servlet-name>LiquorRegister</servlet-name>
-    <servlet-class>vn.de.lipo.webapp.controller.RegisterServlet</servlet-class>
-  </servlet>
-
-  <servlet>
-    <servlet-name>CookieTesting</servlet-name>
-    <servlet-class>vn.de.lipo.webapp.controller.CookieTestingServlet</servlet-class>
+    <servlet-name>LipoRegister</servlet-name>
+    <servlet-class>vn.de.lipo.webapp.controller.RegisterServletLipo</servlet-class>
   </servlet>
 
   <context-param>
@@ -30,16 +25,12 @@
   </context-param>
   
   <servlet-mapping>
-  	<servlet-name>LiquorRegister</servlet-name>
-  	<url-pattern>/RegisterTesting.do</url-pattern>
-  </servlet-mapping>
-
-  <servlet-mapping>
-  	<servlet-name>CookieTesting</servlet-name>
-  	<url-pattern>/checkCookie.do</url-pattern>
+  	<servlet-name>LipoRegister</servlet-name>
+  	<url-pattern>/Register.do</url-pattern>
   </servlet-mapping>
 
   <listener>
     <listener-class>vn.de.lipo.webapp.listener.RegisterServletListener</listener-class>
   </listener>
+
 </web-app>
